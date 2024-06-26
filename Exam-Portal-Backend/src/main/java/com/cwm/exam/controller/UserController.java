@@ -1,6 +1,7 @@
 package com.cwm.exam.controller;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,13 @@ public class UserController {
 	@DeleteMapping("/remove")
 	public ResponseEntity<String> deleteUser(@RequestParam(name="id") int id) {
 		return ResponseEntity.ok(userService.deleteUser(id));
+	}
+	
+	//Get all user API 
+	//TODO Give only Admin access
+	
+	@GetMapping("/all")
+	public ResponseEntity<List<User>> getAllUsers(){
+		return ResponseEntity.ok(this.userService.getAllUsers());
 	}
 }

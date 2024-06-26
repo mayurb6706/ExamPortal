@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 
 @NgModule({
   declarations: [
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports:[
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
 
   ]
 })

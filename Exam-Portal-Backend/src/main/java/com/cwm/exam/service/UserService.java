@@ -1,5 +1,6 @@
 package com.cwm.exam.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -14,4 +15,6 @@ public interface UserService {
 	 User getUserByUsername(String username);
 	 
 	 String deleteUser(int id);
+	 
+	 List<User> getAllUsers();
 }

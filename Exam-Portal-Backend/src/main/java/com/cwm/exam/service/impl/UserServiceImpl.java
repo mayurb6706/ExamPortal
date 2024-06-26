@@ -1,5 +1,6 @@
 package com.cwm.exam.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -50,6 +51,12 @@ public class UserServiceImpl implements UserService {
 		User user = this.userRepo.findById(id).get();
 		this.userRepo.delete(user);
 		return "User deleted sucessfully!";
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		List<User> users= this.userRepo.findAll();
+		return users;
 	}
 
 }
