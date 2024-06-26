@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.cwm.exam.model.Role;
 import com.cwm.exam.model.User;
@@ -14,6 +16,8 @@ import com.cwm.exam.model.UserRole;
 import com.cwm.exam.service.impl.UserServiceImpl;
 
 @SpringBootApplication
+@EntityScan("com.cwm.exam.model")
+@EnableJpaRepositories("com.cwm.exam.dao")
 public class ExamPortalApplication implements CommandLineRunner {
 
 	@Autowired
