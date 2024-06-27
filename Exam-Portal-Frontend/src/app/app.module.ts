@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
+import { AuthorizationService } from './services/authorization.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,11 @@ import {HttpClientModule} from '@angular/common/http'
     AuthModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthorizationService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

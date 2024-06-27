@@ -31,7 +31,15 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(this.userLoginForm.value).subscribe({
       next: (data: any) => {
         if (data.token != null) {
-          console.log(data.token)
+         //Save the user details
+        this.authService.saveUserGeneratedToken(data.token)
+
+        //Get the user Details
+        this.authService.findUserByUsername(this.userLoginForm.value).subscribe(data=>{
+          console.log(data)
+          this.authService.saveUserDetails(data)
+        })
+
           this.route.navigateByUrl('')
         }
       }, error: (err: any) => {
