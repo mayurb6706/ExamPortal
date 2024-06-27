@@ -41,4 +41,25 @@ export class AuthService {
   getSavedUserDetails(){
     return JSON.parse(this.session.getItem('currentUser'))
   }
+
+  getUsername(){
+    const user= this.getSavedUserDetails()
+   console.log(user)
+   return user.username
+  }
+
+  userLoginStatus(){
+    const token= this.getSavedToken()
+    if(token!=null){
+
+      return true
+    }
+    else
+    return false
+  }
+
+  logoutUser(){
+    this.session.removeItem('token')
+    this.session.removeItem('currentItem')
+  }
 }

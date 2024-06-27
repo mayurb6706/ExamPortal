@@ -1,14 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Exam Portal</a>
-   
+
     <div class="collapse navbar-collapse" id="navbarText">
     </div>
     <span class="navbar-text">
-    <a href="/login">
-        <div class="btn btn-light btn-sm" >Login</div>
-    </a>
-    <a href="">
-        <div class="btn btn-light btn-sm">Username</div>
-    </a>
-      </span>
-  </nav>
+        <div *ngIf="!isLoggedIn">
+            <a href="/login">
+                <div class="btn btn-light btn-sm">Login</div>
+            </a>
+        </div>
+        <div *ngIf="isLoggedIn">
+            <a >
+                <div class="btn btn-light btn-sm">{{username}}</div>
+            </a>
+        </div>
+    </span>
+</nav>

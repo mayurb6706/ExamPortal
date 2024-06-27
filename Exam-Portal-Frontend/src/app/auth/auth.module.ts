@@ -4,13 +4,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
 @NgModule({
   declarations: [
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { LoginComponent } from './login/login.component';
   ],
   exports:[
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
 
   ]
 })
