@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.cwm.exam.model.Role;
 import com.cwm.exam.model.User;
@@ -22,6 +23,7 @@ public class ExamPortalApplication implements CommandLineRunner {
 
 	@Autowired
 	private UserServiceImpl userService;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(ExamPortalApplication.class, args);
@@ -36,8 +38,7 @@ public class ExamPortalApplication implements CommandLineRunner {
 //		user.setLastname("Bhosale");
 //		user.setContact(123456789L);
 //		user.setEmail("mayur@test.com");
-		
-		// TODO Encrypt the user password
+//		
 //		user.setPassword("password");
 //		user.setUsername("username");
 //		Role role = new Role();
