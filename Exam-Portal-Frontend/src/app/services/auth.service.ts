@@ -14,4 +14,8 @@ export class AuthService {
   registerUser(user: User):Observable<any> {
   return this.http.post<any>(`${this.authUrl}/register`,user)
   }
+
+  loginUser(value:any):Observable<any>{
+    return this.http.post<any>(`http://localhost:8080/api/auth/login`,value)
+  }
 }
