@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -13,10 +14,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-   userLoginForm: FormGroup;
+  userLoginForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
-    private authService:AuthService
-  ) {}
+    private authService: AuthService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
     this.userLoginForm = this.formBuilder.group({
@@ -26,10 +28,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-  this.authService.loginUser(this.userLoginForm.value).subscribe({
-    next:(data:any)=>{
-      console.log(data)
-    },error:(err:any)=>console.log(err)
-  })
+    this.authService.loginUser(this.userLoginForm.value).subscribe({
+      next: (data: any) => {
+        if (data.token != null) {
+          console.log(data.token)
+          this.route.navigateByUrl('')
+        }
+      }, error: (err: any) => {
+        alert("Login Failed! Check your credential.")
+      }
+    })
   }
 }

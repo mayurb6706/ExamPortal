@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -15,9 +16,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignUpComponent implements OnInit {
   registerForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
-    private authService:AuthService
+    private authService: AuthService, private route: Router
 
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -30,15 +31,17 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  register(){
+  register() {
     this.authService.registerUser(this.registerForm.value).subscribe({
-      next:(user:any)=>{
-        console.log(user)
-      }, error:(err:any)=>console.log(err)
+      next: (user: any) => {
+        if (user != null) {
+          this.route.navigateByUrl("/login")
+        }
+      }, error: (err: any) => console.log(err)
     });
   }
 
-  clearInput(){
+  clearInput() {
     this.registerForm.reset()
   }
 }
