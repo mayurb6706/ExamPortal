@@ -5,8 +5,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { HomeComponent } from './common-component/home/home.component';
+import { ContactUsComponent } from './common-component/contact-us/contact-us.component';
+import { AboutUsComponent } from './common-component/about-us/about-us.component';
 
 const routes: Routes = [
+  {path:'contact-us',component:ContactUsComponent},
+  {path:'about-us', component:AboutUsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'logout', component:LogoutComponent},
   {path:'login', component:LoginComponent},

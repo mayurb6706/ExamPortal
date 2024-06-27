@@ -1,8 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
 
 body,
 html{
-    width: 100%;
+    width:auto;
     font-size: large;
 }
 
@@ -26,11 +25,12 @@ html{
   
 }
  
- /* On small screens, set height to 'auto' for sidenav and grid */
- @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
    .sidenav {
      height: auto;
      padding: 15px;
    }
    .row.content {height: auto;} 
  }
+
+ 
