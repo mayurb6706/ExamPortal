@@ -1,0 +1,20 @@
+.dropbtn {
+
+    color: black;
+    border: none; 
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+  
+  }
+  
+  .dropdown-content a {
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+  }
+
+
+.dropdown:hover .dropdown-content {display: block;}

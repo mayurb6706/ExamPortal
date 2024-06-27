@@ -11,7 +11,13 @@
         </div>
         <div *ngIf="isLoggedIn">
             <a >
-                <div class="btn btn-light btn-sm">{{username}}</div>
+                <div class=" dropdown">
+                    <button class="btn btn-light btn-sm dropbtn">{{username}}</button>
+                    <div class="dropdown-content">
+                      <a href="/logout">Logout</a>
+                      <a href="#">Profie</a>
+                    </div>
+                  </div>
             </a>
         </div>
     </span>
