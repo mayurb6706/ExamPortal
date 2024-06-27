@@ -6,18 +6,13 @@
     <span class="navbar-text">
         <div *ngIf="!isLoggedIn">
             <a href="/login">
-                <div class="btn btn-light btn-sm">Login</div>
+               
+                    <h5>Login</h5>
             </a>
         </div>
         <div *ngIf="isLoggedIn">
             <a >
-                <div class=" dropdown">
-                    <button class="btn btn-light btn-sm dropbtn">{{username}}</button>
-                    <div class="dropdown-content">
-                      <a href="/logout">Logout</a>
-                      <a href="/profile">Profie</a>
-                    </div>
-                  </div>
+               <h5> Welcome {{username}}</h5>
             </a>
         </div>
     </span>
