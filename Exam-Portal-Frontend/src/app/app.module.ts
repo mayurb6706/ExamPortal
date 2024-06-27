@@ -7,10 +7,12 @@ import { AuthModule } from './auth/auth.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { AuthorizationService } from './services/authorization.service';
+import { ProfileComponent } from './User/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
