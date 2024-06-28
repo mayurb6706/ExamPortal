@@ -3,6 +3,8 @@ package com.cwm.exam.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,6 +34,7 @@ public class Categeory {
 	private String name;
 	private String description;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "categeory")
 	private Set<Quiz> quiz = new HashSet<>();
 	

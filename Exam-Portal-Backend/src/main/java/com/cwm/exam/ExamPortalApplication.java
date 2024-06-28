@@ -40,7 +40,7 @@ public class ExamPortalApplication implements CommandLineRunner {
 //		user.setEmail("mayur@test.com");
 //		
 //		user.setPassword("password");
-//		user.setUsername("username");
+//		user.setUsername("fa0wlhg");
 //		Role role = new Role();
 //		role.setRoleId(1);
 //		role.setRoleName("ADMIN");
