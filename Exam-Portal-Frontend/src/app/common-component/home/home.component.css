@@ -1,22 +1,31 @@
-  /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-  .row.content {height: 1500px}
-    
+
+  h1{
+    color:#fff;
+  }
+  .lead{
+    color:#aaa;
+  }
+  
+  .wrapper{margin:10vh}
 
   
- .row-12{
-    font-size: large;
- }
- .nav{
-    text-align: center;
-    font-size: x-large;
-   
- }
+  .card{
   
-  /* On small screens, set height to 'auto' for sidenav and grid */
-  @media screen and (max-width: 767px) {
-    .sidenav {
-      height: auto;
-      padding: 15px;
-    }
-    .row.content {height: auto;} 
+   min-height:350px;
+  
+   &:hover {
+     .card-body{
+       margin-top:10px;
+     }
+   cursor: pointer;
   }
+   .card-img-overlay {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  background: linear-gradient(0deg, rgba(250, 248, 244, 0.379) 0%, rgb(251, 246, 236) 100%);
+  }
+  }
+
+  
+   
+    
+  
