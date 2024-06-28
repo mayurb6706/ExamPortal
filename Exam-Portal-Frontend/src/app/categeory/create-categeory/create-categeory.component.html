@@ -15,16 +15,39 @@
                     <form [formGroup]="categeoryForm" (ngSubmit)="addCategeory()">
 
                         <div class="mb-4" style="border: none;">
-                            <input type="text" class="form-control from-control-lg"
-                                formControlName="name" />
+                            <input type="text" class="form-control from-control-lg" formControlName="name" />
                             <label class="form-label" for="form2Example1">Categeory Name</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <textarea cols="50"  rows="5" class="tesxt-area" formControlName="description"></textarea>
+                            <textarea cols="50" rows="5" class="form-control from-control-lg" formControlName="description"></textarea>
                             <label class="form-label" for="form2Example1">Categeory Description</label>
                         </div>
                         <div class="text-center  mb-4">
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <!-- <button type="submit" class="btn btn-primary btn-block">Submit</button> -->
+                            <button style="margin: 20px; padding: 10px" type="submit" class="btn btn-primary"
+                                (click)="openPopup()">Submit
+                            </button>
+                            <button  class="btn btn-danger"
+                                (click)="backToHome()">Cancel
+                            </button>
+                            <div class="modal" [ngStyle]="{'display':displayStyle}">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Exam Portal</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Quiz Categeory added Sucessfully!</p>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success btn-sm" (click)="closePopup()">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

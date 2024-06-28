@@ -15,10 +15,13 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   userLoginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,
+  displayStyle: any;
+  popupMessage: any;
+  constructor(
+    private formBuilder: FormBuilder,
     private authService: AuthService,
-    private route: Router
-  ) { }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.userLoginForm = this.formBuilder.group({
@@ -31,20 +34,36 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(this.userLoginForm.value).subscribe({
       next: (data: any) => {
         if (data.token != null) {
-         //Save the user details
-        this.authService.saveUserGeneratedToken(data.token)
+          //Save the user details
+          this.authService.saveUserGeneratedToken(data.token);
 
-        //Get the user Details
-        this.authService.findUserByUsername(this.userLoginForm.value).subscribe(data=>{
-          console.log(data)
-          this.authService.saveUserDetails(data)
-        })
-
-          this.route.navigateByUrl('/home')
+          //Get the user Details
+          this.authService
+            .findUserByUsername(this.userLoginForm.value)
+            .subscribe((data) => {
+              this.authService.saveUserDetails(data);
+            });
+          this.popupMessage = 'Login Success!';
+        
         }
-      }, error: (err: any) => {
-        alert("Login Failed! Check your credential.")
-      }
-    })
+      },
+      error: (err: any) => {
+        this.popupMessage = 'Login Failed! Check your credential'
+      },
+    });
   }
+
+  openPopup() {
+    this.displayStyle = 'block';
+  }
+  closePopup() {
+    this.displayStyle = 'none';
+    if(this.popupMessage==='Login Success!')
+    this.navigateToHome();
+  }
+
+  navigateToHome() {
+    this.router.navigateByUrl('/home');
+  }
+ 
 }

@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -13,8 +12,7 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     NavbarComponent,
     ContactUsComponent,
-    AboutUsComponent,
-    WelcomeComponent
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +23,6 @@ import { RouterModule } from '@angular/router';
     NavbarComponent,
     ContactUsComponent,
     AboutUsComponent,
-    WelcomeComponent
   ]
 })
 export class CommonComponentModule { }

@@ -30,9 +30,26 @@ export class CreateCategeoryComponent implements OnInit {
     this.catService.addNewCategeory(this.categeoryForm.value).subscribe({
       next: (data: any) => {
         if (data != null) {
-          this.router.navigateByUrl('/home')
+          this.openPopup()
         }
       }, error: (err: any) => console.log(err)
     })
+  }
+
+  displayStyle = "none"; 
+  
+  openPopup() { 
+    this.displayStyle = "block"; 
+  } 
+  closePopup() { 
+    this.displayStyle = "none"; 
+    this.navigateToHome()
+  } 
+
+  navigateToHome(){
+      this.router.navigateByUrl('/home')
+  }
+  backToHome(){
+    this.router.navigateByUrl('/home')
   }
 }

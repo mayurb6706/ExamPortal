@@ -15,8 +15,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SignUpComponent implements OnInit {
   registerForm: FormGroup;
+  displayStyle: string;
+  popupMessage: string;
   constructor(private formBuilder: FormBuilder,
-    private authService: AuthService, private route: Router
+    private authService: AuthService, private router: Router
 
   ) { }
 
@@ -35,13 +37,28 @@ export class SignUpComponent implements OnInit {
     this.authService.registerUser(this.registerForm.value).subscribe({
       next: (user: any) => {
         if (user != null) {
-          this.route.navigateByUrl("/login")
+         this.popupMessage="Registeration Success!"
         }
-      }, error: (err: any) => console.log(err)
+      }, error: (err: any) => {
+        this.popupMessage="Registeration Failed!"
+      }
     });
   }
 
   clearInput() {
     this.registerForm.reset()
+  }
+
+  openPopup() {
+    this.displayStyle = 'block';
+  }
+  closePopup() {
+    this.displayStyle = 'none';
+    if(this.popupMessage==='Registeration Success!')
+    this.navigateToLogin();
+  }
+
+  navigateToLogin() {
+    this.router.navigateByUrl('/login');
   }
 }
