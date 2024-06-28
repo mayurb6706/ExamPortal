@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,16 +13,19 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HomeComponent,
     NavbarComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    WelcomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     HomeComponent,
     NavbarComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    WelcomeComponent
   ]
 })
 export class CommonComponentModule { }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Exam-Portal-Frontend';
+
+  constructor(private authService:AuthService){}
+
+  ngOnInit():void{
+
+  }
+
+  get isLoggedIn(){
+    return this.authService.userLoginStatus()
+  }
 }

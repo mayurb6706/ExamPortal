@@ -1,0 +1,19 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+   padding-top: 10px;
+ 
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .navbar-text{
+    font-size: large;
+  }

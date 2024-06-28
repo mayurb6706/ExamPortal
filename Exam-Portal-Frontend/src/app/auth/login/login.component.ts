@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
           this.authService.saveUserDetails(data)
         })
 
-          this.route.navigateByUrl('')
+          this.route.navigateByUrl('/welcome-home')
         }
       }, error: (err: any) => {
         alert("Login Failed! Check your credential.")
