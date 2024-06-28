@@ -44,7 +44,6 @@ export class AuthService {
 
   getUsername(){
     const user= this.getSavedUserDetails()
-   console.log(user)
    return user.username
   }
 
