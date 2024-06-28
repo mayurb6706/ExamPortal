@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cwm.exam.model.Categeory;
 import com.cwm.exam.service.impl.CategeoryServiceImpl;
 
-import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 
 @RestController
