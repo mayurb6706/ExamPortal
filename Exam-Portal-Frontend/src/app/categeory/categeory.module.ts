@@ -4,13 +4,15 @@ import { CreateCategeoryComponent } from './create-categeory/create-categeory.co
 import { ListCategeoryComponent } from './list-categeory/list-categeory.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { UpdateCategeoryComponent } from './update-categeory/update-categeory.component';
 
 
 
 @NgModule({
   declarations: [
     CreateCategeoryComponent,
-    ListCategeoryComponent
+    ListCategeoryComponent,
+    UpdateCategeoryComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,9 @@ import { RouterModule } from '@angular/router';
   ],
   exports:[
     CreateCategeoryComponent,
-    ListCategeoryComponent
+    ListCategeoryComponent,
+    UpdateCategeoryComponent
+
   ]
 })
 export class CategeoryModule { }

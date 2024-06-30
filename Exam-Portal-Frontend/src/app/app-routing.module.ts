@@ -10,10 +10,12 @@ import { CreateCategeoryComponent } from './categeory/create-categeory/create-ca
 import { ProfileComponent } from './user/profile/profile.component';
 import { ListCategeoryComponent } from './categeory/list-categeory/list-categeory.component';
 import { WelcomeComponent } from './common-component/welcome/welcome.component';
+import { UpdateCategeoryComponent } from './categeory/update-categeory/update-categeory.component';
 // import { ProfileComponent } from './User/profile/profile.component';
 
 
 const routes: Routes = [
+  {path:'update/:id',component:UpdateCategeoryComponent},
   {path:'all-categeory',component:ListCategeoryComponent},
   {path:'create-categeory',component:CreateCategeoryComponent},
   {path:'contact-us',component:ContactUsComponent},
