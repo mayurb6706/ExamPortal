@@ -14,4 +14,12 @@ export class CategeoryService {
   addNewCategeory(data:any):Observable<any>{
     return this.http.post<any>(`${this.categeoryUrl}/create`,data)
   }
+
+  getAllCategeory():Observable<any[]>{
+    return this.http.get<any[]>(`${this.categeoryUrl}/all`)
+  }
+
+  deleteCategeory(id:number):Observable<any>{
+    return this.http.delete<any>(`${this.categeoryUrl}/id?id=${id}`)
+  }
 }
