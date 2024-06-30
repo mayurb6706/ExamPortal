@@ -13,4 +13,6 @@ public interface CategeoryService {
 	String deleteCategeory(int id);
 	
 	Categeory getById(int id);
+	
+	Categeory updateCategeory(int id, Categeory categeory);
 }

@@ -41,4 +41,14 @@ public class CategeoryServiceImpl  implements CategeoryService{
 		return categeory;
 	}
 
+	@Override
+	public Categeory updateCategeory(int id, Categeory categeory) {
+		Categeory cat= this.getById(id);
+		if(cat!=null) {
+		cat.setDescription(categeory.getDescription());
+		this.categeoryRepo.save(cat);
+		}
+		return cat;
+	}
+
 }
