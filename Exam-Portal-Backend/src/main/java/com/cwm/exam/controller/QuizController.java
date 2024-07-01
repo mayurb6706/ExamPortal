@@ -25,29 +25,31 @@ import lombok.AllArgsConstructor;
 public class QuizController {
 
 	private QuizServiceImpl quizService;
-	
-	//Create Quiz
+
+	// Create Quiz
 	@PostMapping("/create")
-	public ResponseEntity<Quiz> createQuiz(@RequestBody Quiz quiz){
-		Quiz newQuiz=this.quizService.createQuiz(quiz);
-		return new ResponseEntity<Quiz>(newQuiz,HttpStatus.CREATED);
+	public ResponseEntity<Quiz> createQuiz(@RequestBody Quiz quiz) {
+		System.out.println(quiz);
+		Quiz newQuiz = this.quizService.createQuiz(quiz);
+		return new ResponseEntity<Quiz>(newQuiz, HttpStatus.CREATED);
+
 	}
-	
-	//Get all Quiz
+
+	// Get all Quiz
 	@GetMapping("/all")
-	public ResponseEntity<List<Quiz>> getAllQuiz(){
-	return ResponseEntity.ok(this.quizService.allQuiz());
+	public ResponseEntity<List<Quiz>> getAllQuiz() {
+		return ResponseEntity.ok(this.quizService.allQuiz());
 	}
-	
-	//Get the quiz by id
+
+	// Get the quiz by id
 	@GetMapping("/id")
-	public ResponseEntity<Quiz> getSingleQuiz(@RequestParam int id){
+	public ResponseEntity<Quiz> getSingleQuiz(@RequestParam int id) {
 		return ResponseEntity.ok(this.quizService.getQuizById(id));
 	}
-	
-	//Delete quiz
+
+	// Delete quiz
 	@DeleteMapping("/id")
-	public ResponseEntity<String> removeQuiz(@RequestParam int id){
+	public ResponseEntity<String> removeQuiz(@RequestParam int id) {
 		return ResponseEntity.ok(this.quizService.deleteQuiz(id));
 	}
 }
