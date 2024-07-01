@@ -41,27 +41,23 @@ img{
   width: max-content;
   min-height: 90vh;
   position: relative;
-  padding: 180px 0 40px 0;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-right: 10%;
 }
 
 .hero .hero-bg img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: max-content;
-  height: max-content;
+
+
+  width: 800px;
+  height: 700px;
 }
 
 .hero .hero-bg::before {
-  content: "";
   background: color-mix(in srgb, var(--background-color), transparent 15%);
   position: absolute;
   inset: 0;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .hero .container {
