@@ -9,7 +9,8 @@ import { AuthorizationService } from './services/authorization.service';
 import { CommonModule } from '@angular/common';
 import { CommonComponentModule } from './common-component/common-component.module';
 import { CategeoryModule } from './categeory/categeory.module';
-import { UserModule } from './user/user.module';
+import { UserModule } from './User/user.module';
+import { QuizModule } from './quiz/quiz.module';
 @NgModule({
     declarations: [
         AppComponent
@@ -26,7 +27,8 @@ import { UserModule } from './user/user.module';
         UserModule,
         CommonModule,
         CommonComponentModule,
-        CategeoryModule
+        CategeoryModule,
+        QuizModule
     ]
 })
 export class AppModule { }
