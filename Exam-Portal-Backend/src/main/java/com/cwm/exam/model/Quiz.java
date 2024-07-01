@@ -36,6 +36,7 @@ public class Quiz {
 	private String title;
 	private boolean active = false;
 	private int noOfQuestion;
+	private String description;
 
 	@ManyToOne
 	@JoinColumn(name = "cat_id", nullable = false)
