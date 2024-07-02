@@ -48,20 +48,23 @@ export class CreateQuizComponent implements OnInit {
   }
 
   createQuiz() {
-    const catId= this.quizForm.value('cid')
+    const catId= this.quizForm.get('cid').value
     console.log(catId+"Cat ID")
     this.categeoryService.findCategeoryById(catId).subscribe({
       next:(data:any)=>{
-        console.log("Categeory Details "+data)
+        this.quizForm.get('categeory').patchValue(data)
+        console.log(JSON.stringify(this.quizForm.get('categeory').value)+" Quiz categeory")
+        // console.log("Categeory Details "+JSON.stringify(data))
+       this.quizService.createQuiz(this.quizForm.value).subscribe({
+        next:(data:any)=>{
+          console.log(data)
+          this.openPopup()
+        }
+       })
       }
     })
-    console.log(this.quizForm.value)
-    // this.quizService.createQuiz(this.quizForm.value).subscribe({
-    //   next: (data: any) => {
-    //     console.log(data)
-    //     this.openPopup()
-    //   }
-    // })
+    
+    
   }
 
   displayStyle = "none";

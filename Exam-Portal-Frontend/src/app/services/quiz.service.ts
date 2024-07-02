@@ -13,8 +13,8 @@ export class QuizService {
   constructor(private http:HttpClient) { }
 
   createQuiz(quiz:Quiz):Observable<any> {
-    console.log("From Quiz Service "+quiz)
-    return null;
-    // return this.http.post<any>(`${this.quizUrl}/create`,quiz);
+    console.log("From Quiz Service "+JSON.stringify(quiz))
+
+  return this.http.post<any>(`${this.quizUrl}/create`,quiz);
   }
 }
