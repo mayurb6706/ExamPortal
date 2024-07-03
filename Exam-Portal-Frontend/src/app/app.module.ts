@@ -11,6 +11,7 @@ import { CommonComponentModule } from './common-component/common-component.modul
 import { CategeoryModule } from './categeory/categeory.module';
 import { UserModule } from './User/user.module';
 import { QuizModule } from './quiz/quiz.module';
+import { QuestionModule } from './question/question.module';
 @NgModule({
     declarations: [
         AppComponent
@@ -28,7 +29,8 @@ import { QuizModule } from './quiz/quiz.module';
         CommonModule,
         CommonComponentModule,
         CategeoryModule,
-        QuizModule
+        QuizModule,
+        QuestionModule
     ]
 })
 export class AppModule { }

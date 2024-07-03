@@ -13,9 +13,13 @@ import { WelcomeComponent } from './common-component/welcome/welcome.component';
 import { UpdateCategeoryComponent } from './categeory/update-categeory/update-categeory.component';
 import { CreateQuizComponent } from './quiz/create-quiz/create-quiz.component';
 import { ListQuizComponent } from './quiz/list-quiz/list-quiz.component';
+import { CreateQuestionComponent } from './question/create-question/create-question.component';
+import { ListQuestionComponent } from './question/list-question/list-question.component';
 
 
 const routes: Routes = [
+  {path:'create-question', component:CreateQuestionComponent},
+  {path:'all-question', component:ListQuestionComponent},
   {path:'create-quiz',component:CreateQuizComponent},
   {path:'all-quiz',component:ListQuizComponent},
   {path:'update/:id',component:UpdateCategeoryComponent},
